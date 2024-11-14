@@ -54,6 +54,23 @@ Antes de rodar a aplicação, é necessário garantir que as seguintes ferrament
 
 ## Como Utilizar a API
 
+1. *Instale as dependências*:
+
+   Navegue até as pastas /api e /worker e execute:
+
+   ```bash
+   npm install
+   ```
+
+2. *Inicie a API e o Worker localmente* para testes:
+
+   ```bash
+   npm start
+   ```
+
+3. *Testes e ajustes: Utilize ferramentas como **Postman* para testar os endpoints da API e verificar a geração dos certificados.
+
+
 ### Endpoint Principal
 
 - *POST /api/v1/certificate*: Envia os dados do aluno e do curso para emissão de certificado.
