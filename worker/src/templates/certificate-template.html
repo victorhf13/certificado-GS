@@ -129,38 +129,20 @@
 
 <body>
 
-    <div class="certificate-container">
-        <div class="certificate-main">
-            <h1>Certificado <br>de Conclusão</h1>
+<div class="certificate-container">
+    <div class="certificate-main">
+        <h1>Certificado <br>de Conclusão</h1>
 
-            <div class="subtitle">Curso:</div>
-            <p class="course-name">{{nome_curso}}</p>
+        <div class="subtitle">Curso:</div>
+        <p class="course-name">{{nome_curso}}</p>
 
-            <p class="student-name">{{nome_aluno}}</p>
-            <p class="certificate-text">Concluiu o curso com carga horária estimada em {{carga_horaria}} horas.</p>
+        <p class="student-name">{{nome_aluno}}</p>
+        <p class="certificate-text">Concluiu o curso com carga horária estimada em {{carga_horaria}} horas.</p>
 
-            <span class="date-label">Data de Conclusão:</span>
-            <p class="date" id="dataConclusao"></p>
-
-            <!-- Elementos Decorativos -->
-            <div class="circle top-left"></div>
-            <div class="circle bottom-right"></div>
-            <div class="dashed-line"></div>
-            <div class="striped-circle"></div>
-            <div class="plus-symbol">+</div>
-        </div>
+        <span class="date-label">Data de Conclusão:</span>
+        <p class="date" id="dataConclusao">{{data_conclusao}}</p>
     </div>
-
-    <script>
-        // Gerar a data atual no formato DD/MM/YYYY
-        const hoje = new Date();
-        const dia = hoje.getDate().toString().padStart(2, '0');
-        const mes = (hoje.getMonth() + 1).toString().padStart(2, '0');
-        const ano = hoje.getFullYear();
-        const dataFormatada = '${dia}/${mes}/${ano}';
-
-        document.getElementById("dataConclusao").textContent = dataFormatada;
-    </script>
+</div>
 
 </body>
 
