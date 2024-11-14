@@ -11,10 +11,10 @@ Antes de rodar a aplicação, é necessário garantir que as seguintes ferrament
 
 1. *Clone o repositório*:
 
-   bash
-   git clone <url do projeto>
-   cd <pasta>
-   
+   ```bash
+   git clone <https://github.com/victorhf13/certificado-GS.git>
+   cd certificado-GS
+   ```
 
 2. *Configuração de variáveis de ambiente*:
 
@@ -22,14 +22,14 @@ Antes de rodar a aplicação, é necessário garantir que as seguintes ferrament
 
    **Arquivo .env para a API**:
 
-   plaintext
+   ```plaintext
    DATABASE_HOST=db
    DATABASE_USER=user
    DATABASE_PASSWORD=pass
    DATABASE_NAME=certificates
    RABBITMQ_HOST=rabbitmq
    REDIS_HOST=redis
-   
+   ```
 
    **Arquivo .env para o Worker**:
 
@@ -66,7 +66,8 @@ Adicione o header *Content-Type* com o valor *application/json*.
 
 #### Exemplo de corpo da requisição (JSON):
 
-json
+
+```json
 {
     "nome_aluno": "Andre Alves",
     "nacionalidade": "Brasileiro",
@@ -77,9 +78,10 @@ json
     "nome_curso": "Sistemas de informação",
     "carga_horaria": 2000
 }
+```
 
 #### Exemplo cURL de chamada:
-curl
+```curl
 curl -X POST http://localhost:3000/api/v1/certificate \
 -H "Content-Type: application/json" \
 -d '{
@@ -92,7 +94,7 @@ curl -X POST http://localhost:3000/api/v1/certificate \
     "nome_curso": "Sistemas de informação",
     "carga_horaria": 2000
 }'
-
+```
 ---
 
 ## Detalhes dos Serviços 📡
@@ -153,15 +155,15 @@ curl -X POST http://localhost:3000/api/v1/certificate \
 
    Navegue até as pastas /api e /worker e execute:
 
-   bash
+   ```bash
    npm install
-   
+   ```
 
 2. *Inicie a API e o Worker localmente* para testes:
 
-   bash
+   ```bash
    npm start
-   
+   ```
 
 3. *Testes e ajustes: Utilize ferramentas como **Postman* para testar os endpoints da API e verificar a geração dos certificados.
 
