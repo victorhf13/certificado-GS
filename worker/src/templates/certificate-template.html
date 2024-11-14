@@ -141,8 +141,28 @@
 
         <span class="date-label">Data de Conclusão:</span>
         <p class="date" id="dataConclusao">{{data_conclusao}}</p>
+        <p class="date" id="dataConclusao"></p>
+
     </div>
 </div>
+
+
+<script>
+  // Supondo que `data_conclusao` seja a data retornada
+  const dataConclusao = new Date("Wed Nov 13 2024 00:00:00 GMT+0000");
+
+  // Função para formatar a data como dd/mm/yyyy
+  function formatarData(data) {
+    const dia = String(data.getDate()).padStart(2, '0');
+    const mes = String(data.getMonth() + 1).padStart(2, '0'); // Mês é baseado em 0
+    const ano = data.getFullYear();
+    return `${dia}/${mes}/${ano}`;
+  }
+
+  // Inserindo a data formatada no elemento HTML
+  document.getElementById("dataConclusao").textContent = formatarData(dataConclusao);
+</script>
+
 
 </body>
 
