@@ -1,0 +1,46 @@
+services:
+  api:
+    build: ./api
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - rabbitmq
+      - redis
+
+  worker:
+    build: ./worker
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - rabbitmq
+      - redis
+    volumes:
+      - ./worker/src/pdfs:/usr/src/app/src/pdfs
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: certificates
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./db:/docker-entrypoint-initdb.d
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+volumes:
+  db-data: {}
